@@ -4,14 +4,18 @@
     <field name="model">product.template</field>
     <field name="inherit_id" ref="product.product_template_only_form_view"/>
     <field name="arch" type="xml">
-      <xpath expr="//sheet/notebook/page[@name='general_information']/group" position="after">
-        <group string="GEDAT (z14)">
-          <field name="z14_gedat_man_id"/>
-          <field name="z14_gedat_vendcode"/>
-          <field name="z14_gedat_unitcount"/>
-          <field name="z14_gedat_unitvol"/>
-          <field name="z14_gedat_vol" readonly="1"/>
-        </group>
+      <xpath expr="//notebook" position="inside">
+        <page string="GEDAT (z14)" name="z14_gedat_page">
+          <group>
+            <field name="z14_gedat_man_id"/>
+            <field name="z14_gedat_vendcode"/>
+          </group>
+          <group string="Packaging &amp; Volume">
+            <field name="z14_gedat_unitcount"/>
+            <field name="z14_gedat_unitvol"/>
+            <field name="z14_gedat_vol" readonly="1"/>
+          </group>
+        </page>
       </xpath>
     </field>
   </record>
