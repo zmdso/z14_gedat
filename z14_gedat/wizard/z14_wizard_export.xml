@@ -1,0 +1,35 @@
+<odoo>
+  <record id="z14_view_export_wizard" model="ir.ui.view">
+    <field name="name">z14.gedat.export.wizard.form</field>
+    <field name="model">z14.gedat.export.wizard</field>
+    <field name="arch" type="xml">
+      <form string="GEDAT Export">
+        <sheet>
+          <group>
+            <group>
+              <field name="date_from"/>
+              <field name="date_to"/>
+              <field name="only_posted"/>
+              <field name="move_types"/>
+              <field name="meldeeinheit"/>
+              <field name="seq_number"/>
+            </group>
+          </group>
+          <footer>
+            <button name="action_export" type="object" string="Export KUNDEN &amp; BWG" class="btn-primary"/>
+            <button string="Close" class="btn-secondary" special="cancel"/>
+          </footer>
+          <group attrs="{'invisible': [('kunden_file','=',False)]}">
+            <separator string="Result" colspan="2"/>
+            <group>
+              <field name="kunden_fname" readonly="1"/>
+              <field name="kunden_file" filename="kunden_fname"/>
+              <field name="bwg_fname" readonly="1"/>
+              <field name="bwg_file" filename="bwg_fname"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>

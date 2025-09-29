@@ -1,0 +1,12 @@
+<odoo>
+  <menuitem id="z14_menu_root" name="GEDAT (z14)"/>
+  <menuitem id="z14_menu_config" name="Configuration" parent="z14_menu_root"/>
+  <menuitem id="z14_menu_operations" name="Operations" parent="z14_menu_root"/>
+
+  <act_window id="z14_action_manufacturer" name="Manufacturers"
+              res_model="z14.gedat.manufacturer" view_mode="tree,form"
+              parent="z14_menu_config"/>
+  <act_window id="z14_action_export" name="Export KUNDEN &amp; BWG"
+              res_model="z14.gedat.export.wizard" view_mode="form" target="new"
+              parent="z14_menu_operations"/>
+</odoo>
