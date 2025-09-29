@@ -4,11 +4,15 @@ from odoo import api, fields, models, _
 class Z14GedatManufacturer(models.Model):
     _name = "z14.gedat.manufacturer"
     _description = "GEDAT Manufacturer (z14)"
+    _order = "name"
 
     name = fields.Char(required=True)
-    code = fields.Char(string="GEDAT Teilnehmer-Nr (8-st.)", help="8-digit GEDAT participant no. of manufacturer/GFGH")
-    gln = fields.Char(string="GLN/ILN", help="GLN/ILN if available")
-    is_our_company_code = fields.Boolean(string="This is our own GEDAT code", help="Marks this record as our own company entry")
+    code = fields.Char(string="GEDAT Teilnehmer-Nr (8-st.)",
+                       help="8-digit GEDAT participant no. of manufacturer/GFGH")
+    is_our_company_code = fields.Boolean(
+        string="This is our own GEDAT code",
+        help="Marks this record as our own company entry",
+    )
 
     @api.model
     def z14_get_our_company_gedat_code(self):
