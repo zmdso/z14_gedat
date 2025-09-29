@@ -6,7 +6,6 @@
       <tree>
         <field name="name"/>
         <field name="code"/>
-        <field name="gln"/>
         <field name="is_our_company_code"/>
       </tree>
     </field>
@@ -21,7 +20,6 @@
           <group>
             <field name="name"/>
             <field name="code"/>
-            <field name="gln"/>
             <field name="is_our_company_code"/>
           </group>
         </sheet>
