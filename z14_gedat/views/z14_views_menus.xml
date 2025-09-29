@@ -1,12 +1,24 @@
 <odoo>
+  <!-- Root Menus -->
   <menuitem id="z14_menu_root" name="GEDAT (z14)"/>
   <menuitem id="z14_menu_config" name="Configuration" parent="z14_menu_root"/>
   <menuitem id="z14_menu_operations" name="Operations" parent="z14_menu_root"/>
 
-  <act_window id="z14_action_manufacturer" name="Manufacturers"
-              res_model="z14.gedat.manufacturer" view_mode="tree,form"
-              parent="z14_menu_config"/>
-  <act_window id="z14_action_export" name="Export KUNDEN &amp; BWG"
-              res_model="z14.gedat.export.wizard" view_mode="form" target="new"
-              parent="z14_menu_operations"/>
+  <!-- Actions -->
+  <record id="z14_action_manufacturer" model="ir.actions.act_window">
+    <field name="name">Manufacturers</field>
+    <field name="res_model">z14.gedat.manufacturer</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="z14_action_export" model="ir.actions.act_window">
+    <field name="name">Export KUNDEN &amp; BWG</field>
+    <field name="res_model">z14.gedat.export.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+
+  <!-- Menus binding actions -->
+  <menuitem id="z14_menu_manufacturer" name="Manufacturers" parent="z14_menu_config" action="z14_action_manufacturer"/>
+  <menuitem id="z14_menu_export" name="Export KUNDEN &amp; BWG" parent="z14_menu_operations" action="z14_action_export"/>
 </odoo>
